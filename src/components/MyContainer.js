@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import MyList from "./MyList";
 
@@ -25,10 +26,11 @@ function MyContainer() {
     }
 
     const updateItem = (id) =>{
+        
         console.log(id + " was pressed");
 
         //https://www.robinwieruch.de/react-update-item-in-list
-        const newList = items.map((item) => {
+        const newItems = items.map((item) => {
             if(item.id === id){
                 if(item.clicked === false){
                     const updatedItem = {...item, clicked:true};
@@ -43,10 +45,8 @@ function MyContainer() {
             }
 
         });
-        setItems(newList);
-          
+        setItems(newItems);
         
-    
     }
     
 
