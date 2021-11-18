@@ -1,12 +1,21 @@
 import './App.css';
 import MyContainer from "./components/MyContainer";
+import Header from "./components/Header";
+import About from "./components/About";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
 
 function App() {
     return ( 
-    <div className = "App" >
-        <h1> Hello World! </h1>
-        <MyContainer/>
-        </div >
+        <Router>
+            <div className = "App" >
+            
+                <Routes>
+                    <Route path="/about" element={ <> <Header/> <About/> </> } />
+                    <Route path="/" element={ <> <Header/> <MyContainer/> </> }/>
+                </Routes>
+            </div >
+        </Router>
     );
 }
 
